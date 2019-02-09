@@ -739,19 +739,23 @@ textarea {
 
     .sticker {
       position: absolute;
-      background: #fff;
+      background: #000;
       width: 522px;
       height: 236px;
       left: 4px;
       top: 4px;
       .border-radius(4px);
       z-index: 2;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      .transition(600ms);
       &:before {
         content: '';
         position: absolute;
         top: 0; right: 0;
         border-top: 28px solid #1f1f1f;
-        border-left: 28px solid #ffffff;
+        border-left: 28px solid transparent;
         width: 0;
       }
       &:after {
@@ -759,7 +763,7 @@ textarea {
         position: absolute;
         top: 0; left: 0;
         border-top: 28px solid #1f1f1f;
-        border-right: 28px solid #ffffff;
+        border-right: 28px solid transparent;
         width: 0;
       }
 
@@ -778,6 +782,12 @@ textarea {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        background: #fff;
+        .border-radius(5px);
+        // box-shadow: 1px 2px 0 rgba(0, 0, 0, 0.16);
+        padding: 1px;
+        background-image: url('../linedpaper.png');
       }
 
 
@@ -1607,4 +1617,9 @@ textarea {
     .search-container {
       padding: 0 10px;
     }
+  }
+
+
+  .cassette .sticker .band {
+    display: none;
   }

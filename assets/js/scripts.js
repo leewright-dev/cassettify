@@ -65,6 +65,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = 'a80d3108334f45218137daffd3454993';
+// const redirectUri = 'https://cassettify.test';
 const redirectUri = 'https://leewright-dev.github.io/cassettify/';
 const scopes = [
   'user-read-email',
@@ -123,17 +124,18 @@ window.onSpotifyPlayerAPIReady = () => {
     $('.js-cassette-title').html(state.track_window.current_track.name + ' - ' + state.track_window.current_track.artists[0].name);
 
     // convert album art to base 64 so that we can use canvas on this origin to get dominant colour
-    getBase64FromImage(state.track_window.current_track.album.images[0].url, function(base64) {
-      $('#hidden-artwork').attr('src', base64);
-
-      // get the average colour
-      setTimeout(function() {
-        var rgb = getAverageRGB(document.getElementById('hidden-artwork'));
-        $('.js-band-color').css('backgroundColor', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')');
-      }, 100);
-
-
-    });
+    // getBase64FromImage(state.track_window.current_track.album.images[0].url, function(base64) {
+    //   $('#hidden-artwork').attr('src', base64);
+    //
+    //   // get the average colour
+    //   setTimeout(function() {
+    //     var rgb = getAverageRGB(document.getElementById('hidden-artwork'));
+    //     $('.js-band-color').css('backgroundColor', 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')');
+    //   }, 100);
+    //
+    //
+    // });
+    $('.cassette .sticker').css("background-image", "url(" + state.track_window.current_track.album.images[0].url + ")");
 
   });
 
