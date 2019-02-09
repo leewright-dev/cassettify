@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Spotify Cassette Player</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="Description" content="Play music from Spotify on a classic cassette. Complete with nostalgic sound effects.">
+
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets//icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icon/favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/icon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta property="og:title" content="Spotify Cassette Player">
+    <meta property="og:site_name" content="Lee Wright">
+    <meta property="og:url" content="">
+    <meta property="og:description" content="Play music from Spotify on a classic cassette. Complete with nostalgic sound effects.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/assets/open-graph-image.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- Include the Web Playback SDK -->
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+
+    <!-- Include our Javascript -->
+    <script src="assets/js/scripts.js" defer></script>
+
+  </head>
+
+  <body>
+
+    <div class="player-section">
+
+
+
+      <div class="container">
+
+        <div class="custom-error">
+          <div>
+            <p>The Spotify player requires a Spotify premium account and is not supported by Safari, mobile or older browsers.</p>
+            <p><a target="_blank" href="https://developer.spotify.com/documentation/web-playback-sdk/#supported-browsers">View supported browsers <i class="material-icons">arrow_right_alt</i></a></p>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <div class="input-container show">
+            <input type="text" class="" name="search" placeholder="Search Spotify..." value="">
+            <div class="icon">
+              <i class="fas fa-search"></i>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+          </div>
+
+          <div class="search-results">
+
+            <div class="recently-played on">
+              <h4>My top tracks</h4>
+              <ul class="js-recently-played">
+                <!-- Recently played tracks appear here -->
+              </ul>
+            </div>
+
+            <div class="js-no-results" style="display: none;"><em>No results</em></div>
+            <ul class="js-search-results">
+              <!-- Search results from Spotify loaded here  -->
+            </ul>
+
+
+          </div>
+
+        </div>
+
+
+
+
+        <div class="cassette-container">
+
+          <div class="cassette">
+            <div class="broken-tape">
+              <img src="assets/broken-tape.svg" alt="">
+            </div>
+            <div class="notch left"></div>
+            <div class="notch right"></div>
+            <div class="shine"></div>
+            <div class="body">
+              <div class="sticker">
+
+                <div class="band js-band-color"></div>
+
+                <div class="handwriting">
+                  <div class="js-cassette-title">
+                    <!-- load dynamic song title  -->
+                  </div>
+                </div>
+
+
+                <div class="center">
+                  <div class="inner">
+
+                    <div class="hole left spinning">
+                      <div class="inner-hole">
+                        <div class="bg"></div>
+                        <div class="tooth one"></div>
+                        <div class="tooth two"></div>
+                        <div class="tooth three"></div>
+                        <div class="tooth four"></div>
+                        <div class="tooth five"></div>
+                        <div class="tooth six"></div>
+                      </div>
+                    </div>
+
+
+                    <div class="hole right spinning">
+                      <div class="inner-hole">
+                        <div class="bg"></div>
+                        <div class="tooth one"></div>
+                        <div class="tooth two"></div>
+                        <div class="tooth three"></div>
+                        <div class="tooth four"></div>
+                        <div class="tooth five"></div>
+                        <div class="tooth six"></div>
+                      </div>
+                    </div>
+
+                    <div class="window"></div>
+
+
+                    <div class="visible-tape">
+                      <div class="tape spinning left"><span></span></div>
+                      <div class="tape spinning right"><span></span></div>
+                    </div>
+
+                    <div class="window-shine"></div>
+
+
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+
+            <div class="head"></div>
+            <div class="inner-head"></div>
+            <div class="opening one"></div>
+            <div class="opening two"></div>
+            <div class="opening three"></div>
+            <div class="opening four"></div>
+            <div class="opening five"></div>
+            <div class="small shine"></div>
+
+          </div>
+        </div>
+
+
+
+        <div class="controls show">
+          <div class="buttons">
+            <a href="#" data-action="backward"><i class="material-icons">fast_rewind</i></a>
+            <a href="#" data-action="stop"><i class="material-icons">stop</i></a>
+            <a href="#" class="first-play-off" data-uri="" data-action="play"><i class="material-icons">play_arrow</i></a>
+            <a href="#" data-action="forward"><i class="material-icons">fast_forward</i></a>
+          </div>
+        </div>
+
+
+      </div>
+
+
+      <div class="branding">
+        <a target="_blank" href="http://leewright.me/"><img src="/assets/logo-lw.svg" alt="Lee Wright logo"></a>
+        <p>Made by <a target="_blank" href="http://leewright.me/">Lee Wright</a></p>
+
+        <p><a target="_blank" href="https://paypal.me/leewright89?locale.x=en_GB"><i class="material-icons">favorite</i> Donate</a></p>
+
+      </div>
+
+
+      <img id="hidden-artwork" src="" alt="">
+
+      <audio id="static" controls loop>
+        <source src="assets/static.ogg" type="audio/ogg">
+        <source src="assets/static.mp3" type="audio/mpeg">
+      </audio>
+
+      <audio id="scrubbing" controls loop>
+        <source src="assets/scrubbing.ogg" type="audio/ogg">
+        <source src="assets/scrubbing.mp3" type="audio/mpeg">
+      </audio>
+
+    </div>
+
+
+
+
+
+
+
+
+
+  </body>
+
+</html>
