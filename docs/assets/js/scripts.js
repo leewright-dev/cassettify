@@ -65,7 +65,7 @@ const authEndpoint = 'https://accounts.spotify.com/authorize';
 
 // Replace with your app's client ID, redirect URI and desired scopes
 const clientId = 'a80d3108334f45218137daffd3454993';
-const redirectUri = 'https://cassette.test';
+const redirectUri = 'https://leewright-dev.github.io/cassettify/';
 const scopes = [
   'user-read-email',
   'user-read-birthdate',
